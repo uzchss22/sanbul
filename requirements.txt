@@ -2,7 +2,7 @@ flask
 bootstrap-flask
 flask-wtf
 wtforms
-tensorflow
+tensorflow-cpu
 scikit-learn
 pandas
 numpy
