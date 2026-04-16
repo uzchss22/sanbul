@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FF Prediction</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+    <div class="container">
+        <a class="btn btn-primary me-2" href="/">Home</a>
+        <a class="btn btn-primary" href="/prediction">FF Prediction</a>
+    </div>
+</nav>
+
+<div class="container mt-4" style="max-width: 500px;">
+    <h4>Fill in the data</h4>
+    <hr>
+
+    {% if error %}
+    <div class="alert alert-danger">{{ error }}</div>
+    {% endif %}
+
+    <form method="POST" action="/prediction">
+        {{ form.hidden_tag() }}
+
+        <div class="mb-3">
+            <label class="form-label">{{ form.longitude.label }}</label>
+            {{ form.longitude(class="form-control", placeholder="예: 5") }}
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">{{ form.latitude.label }}</label>
+            {{ form.latitude(class="form-control", placeholder="예: 6") }}
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">{{ form.month.label }}</label>
+            {{ form.month(class="form-control", placeholder="예: 01-Jan") }}
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">{{ form.day.label }}</label>
+            {{ form.day(class="form-control", placeholder="예: 06-sat") }}
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">{{ form.avg_temp.label }}</label>
+            {{ form.avg_temp(class="form-control", placeholder="예: 30") }}
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">{{ form.max_temp.label }}</label>
+            {{ form.max_temp(class="form-control", placeholder="예: 35") }}
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">{{ form.max_wind_speed.label }}</label>
+            {{ form.max_wind_speed(class="form-control", placeholder="예: 27") }}
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">{{ form.avg_wind.label }}</label>
+            {{ form.avg_wind(class="form-control", placeholder="예: 15.7") }}
+        </div>
+
+        {{ form.submit(class="btn btn-primary") }}
+    </form>
+</div>
+
+<footer class="container mt-5">
+    <p class="text-muted">© Hyeok CHOI</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

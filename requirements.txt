@@ -1,0 +1,11 @@
+flask
+bootstrap-flask
+flask-wtf
+wtforms
+tensorflow
+scikit-learn
+pandas
+numpy
+matplotlib
+joblib
+gunicorn
